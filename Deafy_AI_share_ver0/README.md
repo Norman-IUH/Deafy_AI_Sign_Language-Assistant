@@ -125,8 +125,8 @@ hoặc nhận riêng. Gói này không kèm các file đó. Ví dụ sau khi t�
 .\.venv\Scripts\python.exe step6_app.py --checkpoint artifacts/step5/TEN_RUN/best_model.pth --required-hands right
 ```
 
-Tài liệu chi tiết: [Bước 2](guide/STEP2.md), [Bước 3](guide/STEP3.md),
-[Bước 4](guide/STEP4.md), [Bước 5](guide/STEP5.md), [Bước 6](guide/STEP6.md).
+Tài liệu chi tiết: [Bước 2](step2_collect_data.py), [Bước 3](step3_dataset.py),
+[Bước 4](step4_model.py), [Bước 5](step5_train.py), [Bước 6](step6_app.py).
 Các tài liệu chi tiết giữ ví dụ đường dẫn/kết quả máy gốc để tham khảo;
 hãy dùng thư mục hiện tại, checkpoint thực tế và quy ước nhóm trong README này.
 

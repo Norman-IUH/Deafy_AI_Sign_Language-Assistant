@@ -2,7 +2,7 @@
 
 Deafy is a university engineering project combining sign recognition, accessible communication, location services and speech playback on Raspberry Pi 5 (4 GB) and Android.
 
-**University course project · Raspberry Pi 5 (4 GB) · v1.0 release candidate.** See [release status](docs/release/RELEASE_NOTES.md) and [validation evidence](docs/release/TEST_REPORT.md).
+**University course project · Raspberry Pi 5 (4 GB) · v1.0 RC8.** See [release status](docs/release/RELEASE_NOTES.md) and [validation evidence](docs/release/TEST_REPORT.md).
 
 ## Problem and objectives
 
@@ -21,6 +21,17 @@ Signing and speaking participants may lack a shared input method. Deafy turns a 
 See [editable system and wiring diagrams](docs/diagrams/SYSTEM.md). The current demo hardware is a Pi 5 4 GB, 7-inch display, USB webcam/microphone, ESP32-S3, MAX98357A and speaker; a Windows laptop with a GPU is optional for CIT. The stack uses Python, PyTorch, MediaPipe, FastAPI, SQLite, React/Vite, Capacitor, Mosquitto, PlatformIO and Arduino ESP32.
 
 ## Architecture
+
+```mermaid
+flowchart LR
+    Camera[USB camera] --> Pi[Pi: MediaPipe and GRU]
+    Pi --> UI[7-inch UI: Vietnamese subtitles and editable draft]
+    Phone[Android: local camera and Model 2] <--> API[Pi: FastAPI and SQLite]
+    UI --> API
+    API --> TTS[Configured speech provider]
+    TTS --> ESP[ESP32-S3: MQTT job and HTTP WAV]
+    ESP --> Speaker[I2S amplifier and speaker]
+```
 
 One FastAPI process on Pi owns camera inference, SQLite, microphone recognition, MQTT, assistant routing and speech coordination. Android has its own camera, MediaPipe Hands and exported Model 2. ONNX Runtime Web is preferred; the same GRU weights are available through a JavaScript fallback. iPhone uses the existing HTTPS web to share GPS. Safari inference is archived research.
 
@@ -57,7 +68,7 @@ To build from a clean source archive, first export the approved checkpoint with 
 
 The acceptance APK is debug-signed. Installing the main application ID can upgrade an older installation if signatures match; save important drafts first. A production signing key belongs to the owner and is not created or replaced here.
 
-Use **Cài đặt → Thông tin AI** to check model provenance and runtime. **Giao tiếp → Chẩn đoán AI** shows camera, hand detection and Model 2 timings. See [parity results](docs/release/TEST_REPORT.md) and [the Android setup guide](HUONG_DAN_BUILD_APK.md).
+Use **Cài đặt → Thông tin AI** to check model provenance and runtime. **Giao tiếp → Chẩn đoán AI** shows camera, hand detection and Model 2 timings. See [parity results](docs/release/TEST_REPORT.md) and [the Android setup guide](docs/setup/android.md).
 
 If a known right hand appears as left, use **Tay phải bị báo trái?** on the affected camera. **Chẩn đoán AI → Đổi hướng ảnh nguồn** toggles source orientation for comparison.
 
@@ -69,6 +80,13 @@ On Windows enable the hotspot, open CIT Voice Studio with its GPU model and run 
 
 Geoapify Places provides nearby categories; Geocoding resolves named addresses. Use a Free project within quota. Provider keys stay on the backend. Never publish .env.local, secrets.h, databases, private keys or deployment backups.
 
+## Repository guide
+
+- [Pi setup](docs/setup/pi.md) and [Android build](docs/setup/android.md)
+- [Assistant and places](docs/guides/assistant-and-places.md), [CIT voice](docs/setup/cit-voice.md), and [iPhone GPS](docs/setup/iphone-gps.md)
+- [Gesture feedback](docs/model/gesture-feedback.md) and [Model 2 benchmarks](docs/model/benchmark.md)
+- `tools/preview/` contains desktop preview tools; `tools/qa/` contains browser fixtures. Use the root launchers to start the demo.
+
 ## Validation and documentation
 
     backend/.venv-pi/bin/python -m pytest backend/tests -q
@@ -76,9 +94,22 @@ Geoapify Places provides nearby categories; Geocoding resolves named addresses. 
     npm --prefix RaspberryPi_7inch run build
     npm --prefix Android_App run build
 
+| Check | Result | Scope |
+| --- | --- | --- |
+| Backend regression | 214 passed, 2 skipped | Windows checkout with locally supplied model fixtures |
+| JavaScript regression | 33 passed | Automated tests |
+| Pi and Android | Web builds passed; APK debug and Android lint passed | Build verification |
+| Model parity | Top-1 and top-3 matched on 115/115 stored tensors | Python baseline vs. Android runtimes; not real-camera accuracy |
+| Pi and ESP32 | Prior demo playback confirmed by listening | Not repeated for this repository cleanup |
+| Physical Android | Pending | Camera, recognition, discovery and reconnect |
+
 See [test results](docs/release/TEST_REPORT.md), [installation and rollback](docs/release/RELEASE_NOTES.md), and the [3–5 minute demo shot list](docs/demo/README.md). The public demo video and product photos are pending; reference mockups are not product evidence.
 
 Physical Android camera/inference and NSD acceptance remains required. Confidence is a model score, not measured accuracy. User samples require review before training. Relays are disabled in the active demo profile. Short signs without a clear boundary and mirrored webcam sources can be difficult; improvement requires labeled physical-device recordings and separate window/handedness evaluation.
+
+## Roadmap
+
+Validate both Android cameras on physical devices, measure end-to-end gesture latency, and retest reconnect after a Pi address change. Add product photos and a demo clip once reviewed for publication.
 
 ## Contributors and responsibilities
 

@@ -1,6 +1,6 @@
 param([ValidateSet('backend','pi','android','all')][string]$Target='all',[switch]$Restart)
 $ErrorActionPreference='Stop'
-$root=Split-Path $PSScriptRoot -Parent
+$root=Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $runtimeNode=Join-Path $env:USERPROFILE '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe'
 $node=if(Test-Path $runtimeNode){$runtimeNode}else{(Get-Command node -ErrorAction SilentlyContinue).Source}
 $logs=Join-Path $root '.tools/preview-logs'

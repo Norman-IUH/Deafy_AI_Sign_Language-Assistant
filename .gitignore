@@ -65,6 +65,10 @@ Deafy_AI_share_ver0/artifacts/
 /Android_App/public/mobile/
 /Android_App/android/app/src/main/assets/public/
 /preview/
-/model_test/
+/model_test/*
+!/model_test/index.html
+!/model_test/model-test.css
+!/model_test/model-test.js
 /PRESENTATION_PACKAGE/
 /DEAFY_V1_HANDOVER/
+!/model_test/icon.svg

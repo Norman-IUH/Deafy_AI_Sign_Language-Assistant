@@ -13,7 +13,7 @@ if ! command -v node >/dev/null; then
   done
 fi
 python_bin=backend/.venv-pi/bin/python
-test -x "$python_bin" || { echo 'Chưa có backend/.venv-pi. Xem docs/PI_AI_IOT.md.'; exit 1; }
+test -x "$python_bin" || { echo 'Chưa có backend/.venv-pi. Xem docs/setup/pi.md.'; exit 1; }
 command -v node >/dev/null || { echo 'Chưa có Node.js. Cài Node 22 LTS rồi chạy lại.'; exit 1; }
 node -e 'const [m,n]=process.versions.node.split(".").map(Number); if (!(m===20&&n>=19 || m>=22&&!(m===22&&n<12))) process.exit(1)' || { echo 'Cần Node 20.19+ hoặc 22.12+; ưu tiên Node 22 LTS.'; exit 1; }
 test -f RaspberryPi_7inch/node_modules/vite/bin/vite.js || { echo 'Chạy npm ci trong RaspberryPi_7inch trước.'; exit 1; }
@@ -38,7 +38,7 @@ for name in modules:
     except ModuleNotFoundError:
         missing.append(name)
 if missing:
-    raise SystemExit('Thiếu dependency: ' + ', '.join(missing) + '. Xem HUONG_DAN_CHAY_DEAFY.md.')
+    raise SystemExit('Thiếu dependency: ' + ', '.join(missing) + '. Xem docs/setup/pi.md.')
 print('Dependency Deafy: OK')
 PY
 bind_host="${DAKT_BIND_HOST:-127.0.0.1}"

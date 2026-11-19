@@ -1,5 +1,5 @@
 @echo off
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\start-preview.ps1" -Target all
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\preview\start-preview.ps1" -Target all
 if errorlevel 1 (
   pause
   exit /b 1

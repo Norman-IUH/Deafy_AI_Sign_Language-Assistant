@@ -1,8 +1,8 @@
 # Build Android APK của Sign Assist
 
-Cập nhật 05/11/2026: đã build APK debug mới sau quyết định dùng **Model 2 độc lập**. Xem [báo cáo build và checksum](docs/MODEL2_APK_20261105.md). Model 2 hiện chạy trong phòng thử Windows, chưa triển khai Pi. APK không chứa trọng số GRU; khi chưa có backend, app hiển thị ngoại tuyến và giữ bản nháp. Không cần Pi/ESP để build hoặc mở app, nhưng camera/GRU/AI/loa qua Pi cần backend và thiết bị tương ứng.
+RC8 đóng gói Model 2 để nhận diện tại chỗ. Build từ source sạch cần export checkpoint được phép phân phối và chuẩn bị tài nguyên MediaPipe theo README. Kết nối Pi dùng cho dịch vụ mạng; camera Android thật vẫn chờ nghiệm thu.
 
-Có thể chạy lại launcher cũ `App_Android_APK/build_apk.ps1` từ PowerShell sau khi cấu hình JAVA_HOME=JDK21 và SDK36; launcher nay trỏ đúng project `Android_App`, không dùng project legacy. Để kiểm tra APK sau build, chạy `python scripts/verify_android_apk.py` từ gốc workspace. Script so khớp asset hiện tại, plugin, credential đang cấu hình và lint; không in giá trị bí mật.
+Chạy `npm --prefix Android_App run android:sync` từ gốc repo sau khi cấu hình JDK 21 và SDK 36. Để kiểm tra APK sau build, chạy `python scripts/verify_android_apk.py` từ gốc workspace. Script so khớp asset hiện tại, plugin, credential đang cấu hình và lint; không in giá trị bí mật.
 
 ## Project đúng
 
@@ -103,5 +103,5 @@ Sau khi nghiệm thu điện thoại, dùng Build → Generate Signed App Bundle
 Ký release và nghiệm thu điện thoại thật đang chờ xác nhận. Lint debug còn cảnh báo không chặn build; xem `Android_App/android/app/build/reports/lint-results-debug.html`.
 # Cập nhật Android tự tìm Pi
 
-Bản debug hiện có plugin NSD `PiDiscovery`. Kết nối điện thoại Android cùng Wi-Fi deafy, giữ **Tự tìm Raspberry Pi trên Wi-Fi** bật trong Cài đặt và nhập mã truy cập Pi một lần. Xem [hướng dẫn discovery và kết quả nghiệm thu](docs/DEAFY_AUTO_DISCOVERY_20261103.md). iPhone không cài được APK; Android NSD trên điện thoại thật hiện chưa được kiểm chứng.
+Bản debug hiện có plugin NSD `PiDiscovery`. Kết nối điện thoại Android cùng Wi-Fi deafy, giữ **Tự tìm Raspberry Pi trên Wi-Fi** bật trong Cài đặt và nhập mã truy cập Pi một lần. Xem [hướng dẫn discovery và kết quả nghiệm thu](../setup/pi.md). iPhone không cài được APK; Android NSD trên điện thoại thật hiện chưa được kiểm chứng.
 
