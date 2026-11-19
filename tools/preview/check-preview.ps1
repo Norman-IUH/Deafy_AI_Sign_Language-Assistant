@@ -1,5 +1,5 @@
 $ErrorActionPreference='Stop'
-$root=Split-Path $PSScriptRoot -Parent
+$root=Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $ports=@(5173,5174)
 $before=@{}
 foreach($port in $ports){$before[$port]=(Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue).OwningProcess}

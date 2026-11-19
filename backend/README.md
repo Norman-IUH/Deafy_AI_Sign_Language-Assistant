@@ -1,8 +1,8 @@
 # Backend dùng chung
 
-Backend phục vụ thật chỉ chạy trên Raspberry Pi. Windows chạy frontend preview; venv Windows dành cho test/fixture loopback tạm. Xem [hướng dẫn chạy mới](../HUONG_DAN_CHAY_DEAFY.md) và [kết quả audit](../docs/DEAFY_SYSTEM_AUDIT_20261102.md). Các API hội thoại cũ của APK được giữ nguyên.
+Backend phục vụ thật chỉ chạy trên Raspberry Pi. Windows chạy frontend preview; venv Windows dành cho test/fixture loopback tạm. Xem [hướng dẫn chạy mới](../docs/setup/pi.md) và [kết quả audit](../docs/release/TEST_REPORT.md). Các API hội thoại cũ của APK được giữ nguyên.
 
-Cấu hình đã thử bằng key thật, broker local và ThingSpeak: xem [báo cáo live](../docs/LIVE_CONFIG_REPORT.md). Bí mật chỉ lưu ở cấu hình backend ignored, không nằm trong source được chia sẻ.
+Cấu hình đã thử bằng key thật, broker local và ThingSpeak: xem [báo cáo live](../docs/release/TEST_REPORT.md). Bí mật chỉ lưu ở cấu hình backend ignored, không nằm trong source được chia sẻ.
 
 FastAPI duy nhất, SQLite duy nhất tại `data/communication.sqlite3`. Không tạo database ở frontend. Đang ưu tiên checkpoint Deafy MediaPipe + GRU 25 ký hiệu; xem `data/DEAFY_TRIAL.md`. Baseline cũ vẫn giữ tại `data/LANDMARK_TRIAL.md`. Thứ tự chọn model xem `data/MODEL_INTEGRATION.md`.
 

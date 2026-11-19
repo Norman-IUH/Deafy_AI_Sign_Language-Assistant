@@ -2,7 +2,7 @@
 
 Pi supports opt-in continuous draft assembly on its existing Model 2. Android RC8 adds the two draft modes without changing the checkpoint, label order or camera handedness logic. Single sign mode stays the default; gesture events do not send a question or trigger playback. The legacy iPhone web continues to serve GPS.
 
-Use [Pi setup](../../HUONG_DAN_CHAY_DEAFY.md) and [APK setup](../../HUONG_DAN_BUILD_APK.md). The Android artifact is debug-signed for local acceptance; no release signing, public repository or v1.0.0 tag is authorized by this candidate.
+Use [Pi setup](../setup/pi.md) and [APK setup](../setup/android.md). The Android artifact is debug-signed for local acceptance; no release signing, public repository or v1.0.0 tag is authorized by this candidate.
 
 Local acceptance APK: `Deafy-v1.0.0-rc8-debug.apk` (versionCode 9), SHA-256 `88d578d0aa36bdfa7a6c9862fa298956934cab0358be91067cd0660e9631e6ba`.
 

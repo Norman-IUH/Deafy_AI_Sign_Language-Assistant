@@ -1,6 +1,6 @@
 # Thử artifacts_2 trên Windows — chưa cập nhật Pi
 
-Cập nhật 05/11: theo phản hồi mới nhất, model mới ổn định hơn và đang là ứng viên thử. Xem [hướng dẫn benchmark độc lập](HUONG_DAN_BENCHMARK_MODELS.md) và [kết quả hiện tại](docs/MODEL_BENCHMARK_20261105.md). Chưa đủ dữ liệu chọn winner hoặc bật hybrid; không suy kết quả 30 mẫu một nhãn thành accuracy 22 nhãn.
+Cập nhật 05/11: theo phản hồi mới nhất, model mới ổn định hơn và đang là ứng viên thử. Xem [hướng dẫn benchmark độc lập](benchmark.md) và [kết quả hiện tại](../model/benchmark.md). Chưa đủ dữ liệu chọn winner hoặc bật hybrid; không suy kết quả 30 mẫu một nhãn thành accuracy 22 nhãn.
 
 Đã tạo môi trường webcam riêng. UI SignAssist và backend Pi hiện có giữ nguyên. Không dùng SQLite, Gemini/Groq key, MQTT hoặc ESP32 của Pi trong phòng thử này.
 
@@ -45,7 +45,7 @@ Chọn nhãn dự định làm trong **Đánh giá có nhãn người dùng**, b
 
 Kết quả lưu ở `.tools/model-test/trials.jsonl`: model/SHA, nhãn người dùng chọn, các nhãn đã xác nhận, số sự kiện sai, thời gian và metrics. Không lưu ảnh/âm thanh hoặc tự training. Nhãn kỳ vọng do người dùng khai báo, chưa được người thứ hai xác minh. Lượt không có frame hợp lệ không được coi là nhận diện đúng hoặc không có false positive. Chưa có lượt gắn nhãn thì không có accuracy webcam để báo cáo.
 
-Model mới đã tải và chạy webcam, nhưng bạn phản hồi nhận sai/nhảy chữ; model cũ ổn hơn. Kết quả so sánh file dữ liệu nằm trong `docs/MODEL_ARTIFACTS_2_20261105.md`. **Chưa đủ điều kiện đưa model mới lên Pi.**
+Model mới đã tải và chạy webcam, nhưng bạn phản hồi nhận sai/nhảy chữ; model cũ ổn hơn. Kết quả so sánh file dữ liệu nằm trong `docs/release/TEST_REPORT.md`. **Chưa đủ điều kiện đưa model mới lên Pi.**
 
 ## Dừng và quay lại preview Pi
 
@@ -72,8 +72,8 @@ Phiên bản đã kiểm thử: Python 3.12; Torch 2.14.1+cpu, NumPy 1.26.4, Med
 Nếu venv thử chưa tồn tại, launcher tạo từ `backend/.venv` đã được cài đặt. Có thể chuẩn bị/kiểm tra thủ công:
 
 ```powershell
-.\backend\.venv\Scripts\python.exe scripts\prepare_model_test_env.py
-.\.venv-model-test\Scripts\python.exe scripts\prepare_model_test_env.py --check
+.\backend\.venv\Scripts\python.exe tools\preview\prepare_model_test_env.py
+.\.venv-model-test\Scripts\python.exe tools\preview\prepare_model_test_env.py --check
 ```
 
 Nếu máy chưa có cả `backend/.venv`, xem `backend/README.md`, tạo venv và cài theo `backend/requirements-windows.lock` trước. Không nâng cấp các gói production chỉ để thử model mới. Cấu hình môi trường đã kiểm tra lưu tại `.tools/model-test/environment.json`.
@@ -83,7 +83,7 @@ Nếu máy chưa có cả `backend/.venv`, xem `backend/README.md`, tạo venv v
 - Server: `.tools/model-test/server.out.log`, `server.err.log`.
 - File chọn tiến trình/cổng riêng: `.tools/model-test/runtime.json`; không chứa key Pi/Gemini/Groq/MQTT.
 - Báo cáo số liệu: `.tools/model-test/comparison.json`.
-- Báo cáo và backup: `docs/MODEL_ARTIFACTS_2_20261105.md`, `.tools/model-test-backup.txt`.
+- Báo cáo và backup: `docs/release/TEST_REPORT.md`, `.tools/model-test-backup.txt`.
 
 ```powershell
 .\.venv-model-test\Scripts\python.exe scripts\compare_model_checkpoints.py

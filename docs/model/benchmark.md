@@ -56,4 +56,4 @@ Chính sách mô tả cố định: final test đã freeze, đủ mẫu/lớp/â
 .\stop_new_model_windows.bat
 ```
 
-Log tại `.tools/model-test/server.out.log`, `server.err.log`. Không cần build Vite/APK cho trang thử tĩnh. Không đổi Pi, MQTT, ESP32, TTS, khóa API hoặc model production. Xem báo cáo triển khai `docs/MODEL_BENCHMARK_20261105.md`.
+Log tại `.tools/model-test/server.out.log`, `server.err.log`. Không cần build Vite/APK cho trang thử tĩnh. Không đổi Pi, MQTT, ESP32, TTS, khóa API hoặc model production. Xem báo cáo triển khai `docs/model/benchmark.md`.

@@ -1,4 +1,4 @@
-// Run in a disposable browser with scripts/ui_fixture.py on :8002, never on a real Pi.
+// Run in a disposable browser with tools/qa/ui_fixture.py on :8002, never on a real Pi.
 module.exports = async function checkAndroidOffline(page) {
   const assert = (value, message) => { if (!value) throw Error(message); };
   const exceptions = [];

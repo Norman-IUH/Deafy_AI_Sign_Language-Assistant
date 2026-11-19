@@ -57,7 +57,7 @@ To build from a clean source archive, first export the approved checkpoint with 
 
 The acceptance APK is debug-signed. Installing the main application ID can upgrade an older installation if signatures match; save important drafts first. A production signing key belongs to the owner and is not created or replaced here.
 
-Use **Cài đặt → Thông tin AI** to check model provenance and runtime. **Giao tiếp → Chẩn đoán AI** shows camera, hand detection and Model 2 timings. See [parity results](docs/release/TEST_REPORT.md) and [the Android setup guide](HUONG_DAN_BUILD_APK.md).
+Use **Cài đặt → Thông tin AI** to check model provenance and runtime. **Giao tiếp → Chẩn đoán AI** shows camera, hand detection and Model 2 timings. See [parity results](docs/release/TEST_REPORT.md) and [the Android setup guide](docs/setup/android.md).
 
 If a known right hand appears as left, use **Tay phải bị báo trái?** on the affected camera. **Chẩn đoán AI → Đổi hướng ảnh nguồn** toggles source orientation for comparison.
 
@@ -68,6 +68,13 @@ iPhone opens https://deafy.local:8443/ and shares GPS in Settings. Nearby search
 On Windows enable the hotspot, open CIT Voice Studio with its GPU model and run START_DEAFY_DEMO.bat. Keep the terminal open. The launcher locates Pi, verifies its pinned ED25519 host key, opens the reverse tunnel and checks CIT from Pi. Supply the verified host-key file separately when deploying another machine.
 
 Geoapify Places provides nearby categories; Geocoding resolves named addresses. Use a Free project within quota. Provider keys stay on the backend. Never publish .env.local, secrets.h, databases, private keys or deployment backups.
+
+## Repository guide
+
+- [Pi setup](docs/setup/pi.md) and [Android build](docs/setup/android.md)
+- [Assistant and places](docs/guides/assistant-and-places.md), [CIT voice](docs/setup/cit-voice.md), and [iPhone GPS](docs/setup/iphone-gps.md)
+- [Gesture feedback](docs/model/gesture-feedback.md) and [Model 2 benchmarks](docs/model/benchmark.md)
+- `tools/preview/` contains desktop preview tools; `tools/qa/` contains browser fixtures. Use the root launchers to start the demo.
 
 ## Validation and documentation
 

@@ -149,10 +149,10 @@ Trên Windows, cấu hình **riêng trên Windows** `backend/.env.local`: `DAKT_
 ```powershell
 npm --prefix RaspberryPi_7inch ci
 npm --prefix Android_App ci
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-preview.ps1 -Target all
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/preview/start-preview.ps1 -Target all
 # Khi đổi IP/cấu hình proxy:
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-preview.ps1 -Target all -Restart
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-preview.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/preview/start-preview.ps1 -Target all -Restart
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/preview/check-preview.ps1
 ```
 
 Windows chỉ chạy frontend ở 5173/5174. Không chạy start_backend/uvicorn riêng để cấp AI cho Android. `start_backend.bat` chỉ kiểm tra Pi. APK thật nhập IP LAN/token trong Cài đặt, không dùng localhost. API/WebSocket của preview đi qua proxy có token phía Node, token Gemini/MQTT không vào bundle.
@@ -192,8 +192,8 @@ Muốn chỉ backend chạy theo phiên đăng nhập, sau lần chạy launcher
 
 Launcher hiện là chế độ **demo/development** đã chạy thực tế: Vite cục bộ, FastAPI một worker, SQLite và broker dùng chung. Phù hợp trình diễn trong LAN tin cậy. `npm run build` tạo static web assets; chưa triển khai production server. Production cần phục vụ static qua gateway/reverse proxy, HTTPS/WSS có chứng chỉ tin cậy và chính sách vận hành riêng; không đưa backend secret vào static assets. Không tự triển khai production trong lượt này.
 
-Kiểm thử source: `backend/.venv-pi/bin/python -m pytest backend/tests -q`. Bài UI dùng `scripts/ui_fixture.py` trên Windows là backend mock tạm, chỉ bind loopback8002, database tạm và xóa biến credential khỏi process; dừng fixture khi thử xong. Xem báo cáo cuối tại `docs/DEAFY_SYSTEM_AUDIT_20261102.md` và hướng dẫn APK tại `HUONG_DAN_BUILD_APK.md`.
+Kiểm thử source: `backend/.venv-pi/bin/python -m pytest backend/tests -q`. Bài UI dùng `tools/qa/ui_fixture.py` trên Windows là backend mock tạm, chỉ bind loopback8002, database tạm và xóa biến credential khỏi process; dừng fixture khi thử xong. Xem báo cáo cuối tại `docs/release/TEST_REPORT.md` và hướng dẫn APK tại `docs/setup/android.md`.
 # Cập nhật tự tìm Pi khi đổi mạng
 
-Hệ thống đã có DNS-SD để Pi dùng DHCP mà ESP và Android không phụ thuộc IP cố định. Xem quy trình hotspot, cài dependency client Windows, ghép nối một lần và các giới hạn kiểm thử trong [hướng dẫn tự tìm Pi](docs/DEAFY_AUTO_DISCOVERY_20261103.md). Phần hướng dẫn IP thủ công bên dưới vẫn dùng được làm dự phòng.
+Hệ thống đã có DNS-SD để Pi dùng DHCP mà ESP và Android không phụ thuộc IP cố định. Xem quy trình hotspot, cài dependency client Windows, ghép nối một lần và các giới hạn kiểm thử trong [hướng dẫn tự tìm Pi](../setup/pi.md). Phần hướng dẫn IP thủ công bên dưới vẫn dùng được làm dự phòng.
 

@@ -1,6 +1,6 @@
 param([ValidateSet('old','new')][string]$Profile='new',[int]$CameraIndex=0,[switch]$Stop,[switch]$NoBrowser)
 $ErrorActionPreference='Stop'
-$root=Split-Path $PSScriptRoot -Parent
+$root=Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $runtimeDir=Join-Path $root '.tools/model-test'
 $runtimeFile=Join-Path $runtimeDir 'runtime.json'
 $python=Join-Path $root '.venv-model-test/Scripts/python.exe'
@@ -30,9 +30,9 @@ try{
     }
     if(-not(Test-Path -LiteralPath $python)){
         $bootstrap=Join-Path $root 'backend/.venv/Scripts/python.exe'
-        if(-not(Test-Path -LiteralPath $bootstrap)){throw 'Set up backend/.venv first. See HUONG_DAN_THU_MODEL_WINDOWS.md.'}
-        & $bootstrap (Join-Path $root 'scripts/prepare_model_test_env.py')
-        if($LASTEXITCODE -ne 0){throw 'Cannot prepare test environment. See HUONG_DAN_THU_MODEL_WINDOWS.md.'}
+        if(-not(Test-Path -LiteralPath $bootstrap)){throw 'Set up backend/.venv first. See docs/model/windows-test.md.'}
+        & $bootstrap (Join-Path $root 'tools/preview/prepare_model_test_env.py')
+        if($LASTEXITCODE -ne 0){throw 'Cannot prepare test environment. See docs/model/windows-test.md.'}
     }
     if(-not $state){
         if($saved){

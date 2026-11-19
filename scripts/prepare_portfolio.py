@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'DEAFY_V1_HANDOVER'
 FOLDERS = ['backend', 'RaspberryPi_7inch', 'Android_App', 'iPhone_GPS', 'shared',
            'scripts', 'mqtt', 'ESP32_SignAssist', 'Deafy_AI_share_ver0',
-           'docs/diagrams', 'docs/demo', 'docs/portfolio', 'docs/release']
+           'model_test', 'tools/qa', 'tools/preview', 'docs/setup', 'docs/model', 'docs/guides', 'docs/diagrams', 'docs/demo', 'docs/portfolio', 'docs/release']
 EXCLUDE = {'assets/public', 'public/mobile', 'build', 'www', 'node_modules', 'data', 'guide',
            'artifacts', 'downloads', 'samples', 'capacitor-cordova-android-plugins'}
 IMAGE_DIRS = ('Android_App/android/app/src/main/res/', 'Android_App/public/icons/',
@@ -23,7 +23,8 @@ ODD = {'.gitignore', '.env.example', 'gradlew', 'gradle-wrapper.jar'}
 ROOT_FILES = ['.gitignore', '.gitattributes', 'README.md', 'CHANGELOG.md', 'Deafy AI.desktop',
               'start_deafy.sh', 'stop_deafy.sh', 'start_pi.sh', 'START_DEAFY_DEMO.bat',
               'start_cit_tunnel.bat', 'start_pi_preview.bat', 'start_android_preview.bat',
-              'start_backend.bat', 'start_all_preview.bat']
+              'start_backend.bat', 'start_all_preview.bat', 'benchmark_models.py',
+              'run_model_benchmark.bat', 'test_new_model_windows.bat', 'stop_new_model_windows.bat']
 PATTERN = re.compile(rb'(?:AIza[A-Za-z0-9_-]{30,}|gsk_[A-Za-z0-9]{30,}|'
                      rb'AQ\.[A-Za-z0-9_-]{35,}|gh[pousr]_[A-Za-z0-9]{30,}|'
                      rb'github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (?:[A-Z]+ )?PRIVATE KEY-----)')
@@ -32,7 +33,6 @@ PATTERN = re.compile(rb'(?:AIza[A-Za-z0-9_-]{30,}|gsk_[A-Za-z0-9]{30,}|'
 def candidates():
     for name in ROOT_FILES:
         yield ROOT / name
-    yield from ROOT.glob('HUONG_DAN_*.md')
     for folder in FOLDERS:
         for directory, dirs, files in os.walk(ROOT / folder):
             parent = Path(directory)
