@@ -1,0 +1,11 @@
+user signassist-pi
+topic write signassist/esp32/mode
+topic write signassist/esp32/command
+topic write signassist/esp32/speech
+topic read signassist/esp32/status
+
+user signassist-esp32
+topic read signassist/esp32/mode
+topic read signassist/esp32/command
+topic read signassist/esp32/speech
+topic write signassist/esp32/status

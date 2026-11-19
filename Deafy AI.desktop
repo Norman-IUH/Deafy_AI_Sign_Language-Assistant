@@ -1,0 +1,23 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Khởi động Deafy
+Comment=Mở Sign Assist trên Raspberry Pi
+Exec=deafy-ai
+Icon=deafy-ai
+Terminal=false
+Categories=Utility;Accessibility;
+StartupNotify=true
+Actions=Check;Restart;Stop;
+
+[Desktop Action Check]
+Name=Kiểm tra nhanh trước demo
+Exec=deafy-ai-check
+
+[Desktop Action Restart]
+Name=Khởi động lại Deafy
+Exec=deafy-ai-restart
+
+[Desktop Action Stop]
+Name=Dừng Deafy
+Exec=deafy-ai-stop

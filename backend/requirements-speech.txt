@@ -1,0 +1,4 @@
+-r requirements-demo.txt
+vosk==0.3.45
+faster-whisper==1.2.1
+sherpa-onnx==2.0.1

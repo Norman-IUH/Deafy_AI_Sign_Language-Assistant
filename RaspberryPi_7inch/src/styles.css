@@ -1,0 +1,253 @@
+@import '@fontsource/be-vietnam-pro/400.css';
+@import '@fontsource/be-vietnam-pro/500.css';
+@import '@fontsource/be-vietnam-pro/600.css';
+@import '@fontsource/be-vietnam-pro/700.css';
+@import '../../shared/styles/interface.css';
+
+#courseTraining summary{display:list-item;align-content:center;min-height:44px;cursor:pointer}
+#courseTraining .speaker-actions{flex-wrap:wrap}
+#courseTraining input,#courseTraining select,#courseTraining progress{max-width:100%}
+#courseTraining label{display:block;margin-top:8px}
+#courseTraining p{overflow-wrap:anywhere}
+.app-shell{height:100dvh;min-height:0;display:flex;flex-direction:column}
+.app-header{height:52px;flex:none;padding-inline:16px;border-bottom:1px solid var(--line)}
+.app-header nav{height:48px}.brand{font-size:20px}.brand-icon{width:32px;height:32px}
+main{flex:1;min-height:0;padding:8px 12px;overflow:auto}
+.home-page{display:flex;flex-direction:column;gap:8px;min-height:100%;height:auto}.home-heading{display:none}
+.pi-mode-bar{position:sticky;top:-8px;z-index:5;display:flex;align-items:center;gap:8px;flex:none;background:var(--bg);padding-block:4px}
+.pi-mode-bar .button{min-height:48px;min-width:144px;font-size:15px}.pi-mode-bar>span{margin-left:auto;font-size:12px;color:var(--muted)}
+#modeIoT[aria-pressed=true]{background:#15803d;color:#fff;border-color:#15803d}
+#modeAI[aria-pressed=true]{background:#4359b8;color:#fff;border-color:#4359b8}
+.communication-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:'camera compose' 'speech compose';align-items:start;gap:8px 12px;min-height:0;height:auto}
+.camera-panel{grid-area:camera;border-radius:12px;height:clamp(220px,38dvh,480px)}
+.camera-view{min-height:150px}.camera-empty{padding:48px 12px 68px}.camera-empty strong{font-size:16px}.camera-empty svg{width:28px;height:28px}
+.recognition-result{min-height:48px;padding:8px 12px}.recognition-result p{font-size:14px}.recognition-result>[data-icon],.ai-indicator{display:none}
+.compose-panel{grid-area:compose;min-width:0;min-height:0;border-left:1px solid var(--line);border-radius:0;background:transparent;padding:0 0 4px 12px;gap:5px;overflow:visible}
+.compose-panel .panel-heading{min-height:24px}.panel-heading h2{font-size:16px}.panel-heading h2>[data-icon]{display:none}.panel-heading .subtle{font-size:11px}
+.compose-panel textarea{min-height:64px;height:64px;flex:none;background:var(--surface);font-size:22px;padding:8px}
+.sentence-field{position:relative;min-width:0}
+.sentence-field textarea{display:block;padding-right:56px}
+.sentence-field .clear-draft{position:absolute;right:4px;top:4px;border:0;background:transparent;color:var(--muted)}
+.iot-command-text{display:flex;align-items:center;gap:8px;min-width:0}.iot-command-text strong{flex:1;min-width:0}
+.pi-mode-hint{margin:0;font-size:11px;line-height:1.4;color:var(--muted);flex:none}
+.editing-tools{position:relative;flex:none}.editing-tools summary,.sign-suggestions summary{display:flex;align-items:center;justify-content:center;min-height:48px;border:1px solid var(--control-line);border-radius:10px;cursor:pointer;font-size:13px;font-weight:600;list-style:none}
+.edit-actions{display:grid;grid-template-columns:repeat(5,minmax(44px,1fr));gap:8px;padding-block:8px}
+.edit-actions .button{padding:8px 4px;font-size:12px}.edit-actions #applyBtn span:last-child,.edit-actions #saveBtn span:last-child{display:none}
+.compose-bottom{gap:4px;flex:none}.compose-bottom .primary-actions .button{min-height:48px;padding:8px 12px;font-size:14px}.compose-bottom #speakingStatus{display:none}
+.sign-suggestions{flex:none;min-width:0}.sign-suggestion-content{padding:8px 0;display:flex;flex-direction:column;gap:8px}
+.sign-suggestion-content label{font-size:12px;color:var(--muted)}
+#signSearch{width:100%;min-height:48px;padding:8px 12px;border:1px solid var(--control-line);border-radius:10px;background:var(--surface);color:var(--ink);font-size:16px}
+.sign-choices{display:flex;flex-wrap:wrap;gap:8px}.sign-choices .button{font-size:14px;white-space:normal;text-align:left}
+#signSuggestionHint{font-size:12px;color:var(--muted);line-height:1.4}
+.pi-answer{flex:none;min-width:0;min-height:0;border-top:1px solid var(--line);padding-top:0;overflow:visible}.pi-answer-drawer{display:flex;flex-direction:column;min-height:0}.pi-answer-controls{display:flex;align-items:center;gap:8px;padding:8px 0;flex:none}.pi-answer-controls>strong{margin-right:auto}.pi-answer-controls .button,.pi-answer-controls .icon-button{min-height:44px;min-width:44px}.pi-answer-content{max-height:260px;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;scrollbar-gutter:stable}.pi-answer-content:focus-visible{outline:2px solid var(--focus);outline-offset:-2px}
+.pi-answer strong{font-size:13px}.pi-answer p{font-size:15px;line-height:1.5;margin:6px 0;overflow-wrap:anywhere}
+#piAnswer{font-size:16px;line-height:1.6;overflow-wrap:anywhere}#piAnswer p{white-space:normal}#piAnswer h1,#piAnswer h2,#piAnswer h3{font-size:17px;margin:12px 0 6px}#piAnswer ul,#piAnswer ol{padding-left:24px;margin:8px 0}#piAnswer pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--surface);padding:10px}#piAnswer a{color:var(--accent);text-decoration:underline}
+#piAIStatus,#piSpeechStatus{font-size:12px;color:var(--muted)}
+#piAnswerHeading{font-size:16px;margin:0 0 8px;text-wrap:balance}
+.pi-answer-drawer>.assistant-task{flex:none;padding-block:0 8px}
+.desktop-assistant .home-page{height:100%}
+.desktop-assistant .communication-grid{flex:1;grid-template-rows:auto minmax(0,1fr);min-height:490px}
+.desktop-assistant .compose-panel{align-self:stretch}
+.desktop-assistant .pi-answer{display:flex;flex:1;flex-direction:column;margin-top:6px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.desktop-assistant .pi-answer::details-content{display:flex;flex:1;min-height:0}
+.desktop-assistant .pi-answer summary,.desktop-assistant .pi-answer-controls{display:none}
+.desktop-assistant .pi-answer-drawer{flex:1;min-width:0}
+.desktop-assistant .assistant-task{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px;padding-bottom:12px}
+.desktop-assistant .pi-answer-content{flex:1;max-height:none;min-height:88px;padding:12px 8px 0 0;border-top:1px solid var(--line)}
+.desktop-assistant .pi-answer-content .assistant-tools>p{margin:2px 0}
+.desktop-assistant #piAnswer{margin-bottom:8px}
+.desktop-assistant .pi-answer-content :is(p,#placesResults):empty{display:none}
+.desktop-assistant .pi-answer:not([data-task="rewrite"]) #assistantOriginal,
+.desktop-assistant .pi-answer[data-task="rewrite"] #piQuestion,
+.desktop-assistant .pi-answer:is([data-task="rewrite"],[data-task="search"],[data-task="weather"]) #piAnswer{display:none}
+.immersive .pi-answer-drawer>.assistant-task{padding:8px 12px}
+.pi-devices{display:grid;gap:6px}.pi-devices p{margin:0;font-size:12px;color:var(--muted)}
+.speech-panel{grid-area:speech;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:center;padding:8px 0;border-radius:0;border-top:1px solid var(--line);background:transparent;min-width:0}
+.speech-label{grid-column:1/-1;align-items:center;gap:8px}.speech-label>[data-icon],.speech-mode{display:none}.speech-label>div{display:flex;align-items:baseline;gap:8px;min-width:0}.speech-label h2{font-size:13px;white-space:nowrap}#speechHint{font-size:11px;line-height:1.4;color:var(--muted)}
+#micTranscript{height:64px;min-height:64px;padding:8px;font-size:17px;min-width:0}.speech-panel .button{min-height:48px;font-size:12px;padding:8px}.speech-panel #listenBtn{min-width:96px}
+.error-banner{flex:none;max-height:64px;overflow:auto;padding:8px 16px}
+@media(max-height:520px){.app-header{gap:8px;padding-inline:12px}nav a{padding-inline:10px;font-size:14px}.brand{font-size:18px}.connection{font-size:12px;padding:6px}.pi-mode-bar>span{max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.camera-diagnostics{right:8px;bottom:8px}.camera-diagnostics output{font-size:11px}}
+@media(max-width:700px){.communication-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:'camera' 'compose' 'speech';grid-template-rows:auto}.compose-panel{border-left:0;padding-left:0}.pi-mode-bar .button{min-width:112px}.pi-mode-bar>span{display:none}.app-header nav a span{display:none}.connection{font-size:11px}.brand{font-size:16px}}
+.immersive-toolbar{display:none}
+.camera-immersive{overflow:hidden}
+.camera-immersive .app-header,.camera-immersive .compose-panel,.camera-immersive .speech-panel{display:none}
+/* One fixed frame for both modes; only the dock content changes. */
+.immersive-brand{display:flex;flex:1;min-width:0;flex-direction:column;gap:3px}
+.immersive-brand strong{font-size:19px;letter-spacing:-.5px}.immersive-brand strong span{font-size:10px;letter-spacing:1.5px;color:#a7b8b1}
+.immersive-iot-command,.immersive-request-status{display:none}
+.pi-answer summary{display:flex;align-items:center;gap:8px;cursor:pointer;min-height:48px;font-size:13px;font-weight:600;list-style:none}
+.pi-answer summary::-webkit-details-marker{display:none}
+.pi-answer summary [data-icon]{width:18px;height:18px}
+.pi-answer summary:after{content:'⌃';margin-left:auto}.pi-answer:not([open]) summary:after{content:'⌄'}
+.camera-panel.immersive{--fs-bg:#101b1c;--fs-surface:#1c2a2c;--fs-border:#425354;--fs-ink:#edf4f1;--fs-muted:#b7c7c4;position:fixed;inset:0;z-index:100;width:100vw;height:100dvh;border:0;border-radius:0;background:var(--fs-bg);color:var(--fs-ink);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:56px minmax(0,1fr) 96px;overflow:hidden}
+.camera-panel.immersive .camera-view{grid-row:2;grid-column:1;width:100%;height:100%;min-height:0;background:#121d20}
+.immersive .camera-view img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}
+.immersive .camera-source,.immersive .camera-expand{display:none}
+.immersive .immersive-toolbar{grid-row:1;grid-column:1;align-self:start;position:relative;z-index:4;display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;grid-template-rows:48px;align-items:center;column-gap:12px;height:56px;padding:4px 16px;border-bottom:1px solid #2e3e40;background:#101b1ce6}
+.immersive .immersive-brand{display:none}
+.immersive .pi-mode-bar{display:flex;gap:8px;padding:3px;border:1px solid var(--fs-border);border-radius:12px;background:#172426}
+.immersive .pi-mode-bar>span{display:none}
+.immersive .pi-mode-bar .button{min-width:64px;min-height:48px;padding:6px 16px;border:0;border-radius:8px;background:transparent;color:var(--fs-muted);font-size:15px;transition:background-color 150ms ease,color 150ms ease}
+.immersive #modeAI[aria-pressed=true]{background:#4359b8;color:#fff}
+.immersive #modeIoT[aria-pressed=true]{background:#23654e;color:#fff}
+.immersive .camera-toggle,.immersive #exitImmersive{position:static;flex:none;min-height:48px;padding:8px 12px;border:1px solid var(--fs-border);border-radius:10px;background:var(--fs-surface);color:var(--fs-ink);font-size:14px;gap:8px}
+.immersive #exitImmersive [data-icon]{width:18px;height:18px}
+.immersive .camera-empty{padding:16px;color:var(--fs-muted)}
+.immersive .camera-empty svg{opacity:.55}
+.immersive .recognition-result{position:static;grid-column:1;grid-row:1;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:repeat(3,16px);align-items:center;column-gap:8px;row-gap:0;width:100%;max-width:100%;min-width:0;min-height:48px;margin:0;padding:0;border:0;background:transparent}
+.immersive .recognition-result .field-caption,.immersive .recognition-result>[data-icon],.immersive .ai-indicator{display:none}
+.immersive .recognition-result>div:first-of-type{grid-column:1;grid-row:1;min-width:0}
+.immersive .recognition-result p{display:block;font-size:12px;font-weight:400;color:var(--fs-muted);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.immersive .camera-diagnostics{display:contents}
+.immersive .camera-diagnostics-toggle{grid-column:2;grid-row:1/4;min-height:44px;border:0;background:transparent;color:var(--fs-muted);font-size:12px;padding:4px 8px;white-space:nowrap}
+.immersive #recognitionTiming,.immersive #recognitionScore{grid-column:1;text-align:left;min-width:0;max-width:100%;border:0;background:transparent;color:var(--fs-muted);border-radius:0;padding:0;font-size:11px;line-height:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.immersive #recognitionTiming{grid-row:2}.immersive #recognitionScore{grid-row:3}
+.camera-immersive .immersive .compose-panel{grid-area:auto;grid-row:3;grid-column:1;position:relative;display:grid;grid-template-columns:minmax(0,1fr) 152px 108px 124px;grid-template-rows:48px 18px;column-gap:12px;row-gap:6px;min-height:0;height:96px;padding:12px 16px;border:0;border-top:1px solid var(--fs-border);background:var(--fs-surface);color:var(--fs-ink);overflow:visible}
+.immersive .compose-panel .panel-heading,.immersive .editing-tools,.immersive .pi-mode-hint{display:none}
+.immersive .compose-panel textarea{grid-column:1;grid-row:1;min-height:48px;height:48px;resize:none;font-size:18px;line-height:1.5;padding:9px 12px;margin:0;border:1px solid #708385;border-radius:10px;background:#122123;color:var(--fs-ink)}
+.immersive .compose-panel textarea::placeholder{color:var(--fs-muted)}
+.immersive .sentence-field{grid-column:1;grid-row:1;min-height:48px}
+.immersive .sentence-field textarea{padding-right:56px}
+.immersive .sentence-field .clear-draft{top:0;right:0;color:var(--fs-muted)}
+.immersive .iot-command-text .clear-draft{flex:none;background:transparent;border-color:var(--fs-border);color:var(--fs-muted)}
+.immersive .compose-bottom{grid-column:2;grid-row:1;margin:0}
+.immersive .primary-actions{height:48px;width:100%;gap:8px}.immersive #askBtn{height:48px;min-height:48px;font-size:15px;flex:1}.immersive #speakBtn{width:48px;min-width:48px;padding:10px;background:var(--fs-surface);border:1px solid #708385;color:var(--fs-ink)}.immersive #speakLabel{display:none}
+.immersive #askBtn{border-radius:10px;background:#4359b8;color:#fff;gap:8px}
+.immersive #askBtn[aria-busy=true] [data-icon]{animation:send-pulse 900ms ease-in-out infinite alternate}
+.immersive .pi-answer{grid-column:4;grid-row:1;position:static;min-height:48px;max-height:none;overflow:visible;padding:0;border:0}
+.immersive .pi-answer summary{height:48px;padding:8px 12px;border:1px solid #708385;border-radius:10px;color:var(--fs-ink);font-size:12px}
+.immersive .pi-answer-drawer{position:absolute;bottom:calc(100% + 8px);right:16px;width:min(440px,calc(100% - 32px));max-height:min(56dvh,360px);overflow:hidden;border:1px solid #708385;border-radius:12px;background:var(--fs-surface);color:var(--fs-ink);box-shadow:0 -12px 40px #0005;z-index:8}.immersive .pi-answer-controls{padding:8px 12px;border-bottom:1px solid var(--fs-border)}.immersive .pi-answer-controls .button,.immersive .pi-answer-controls .icon-button{background:transparent;color:var(--fs-ink);border-color:var(--fs-border)}.immersive .pi-answer-content{position:static;flex:1;min-height:0;max-height:none;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;padding:12px;white-space:normal;scroll-padding:12px}
+.immersive .pi-answer strong{font-size:12px;color:#b8c8ff}.immersive .pi-answer p{font-size:16px;line-height:1.6;margin:8px 0}
+.immersive #piAIStatus,.immersive #piSpeechStatus{color:var(--fs-muted);font-size:12px}
+.immersive .immersive-request-status{display:block;grid-column:1/-1;grid-row:2;font-size:12px;color:var(--fs-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0}
+.immersive .pi-devices{grid-column:1/-1;grid-row:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,44%);grid-template-rows:1fr auto;align-items:center;gap:4px 16px}
+.immersive .immersive-iot-command{display:flex;flex-direction:column;min-width:0;gap:5px}
+.immersive .immersive-iot-command .field-caption{font-size:11px;letter-spacing:.5px;color:var(--fs-muted)}
+.immersive #piLastCommand{font-size:18px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.immersive .iot-status{justify-self:end;font-size:13px;color:#efc78d;padding:7px 10px;border-radius:8px;background:#3c3529;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.immersive .iot-status[data-status=DONE]{background:#1e4537;color:#bcebd6}
+.immersive .iot-status[data-status=ERROR],.immersive .iot-status[data-status=error]{background:#4c2c32;color:#ffd3d8}
+.immersive .iot-status:empty{display:none}
+.immersive #piDeviceState{font-size:12px;color:var(--fs-muted)}
+.immersive .error-banner{position:absolute;bottom:calc(100% + 8px);left:16px;right:16px;z-index:10;padding:12px 16px;margin:0;max-height:100px;overflow:auto;border:1px solid #b47780;border-radius:10px;background:#482d35;color:#ffe0e4;font-size:14px}
+:root[data-pi-mode=iot] .immersive .compose-panel textarea,:root[data-pi-mode=iot] .immersive .immersive-request-status{display:none}
+:root[data-pi-mode=iot] .immersive .sentence-field,:root:not([data-pi-mode]) .immersive .sentence-field{display:none}
+:root:not([data-pi-mode]) .immersive .compose-panel textarea,:root:not([data-pi-mode]) .immersive .compose-bottom,:root:not([data-pi-mode]) .immersive .sign-suggestions{display:none}
+@keyframes send-pulse{to{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.immersive .pi-mode-bar .button{transition:none}.immersive #askBtn[aria-busy=true] [data-icon]{animation:none}}
+@media(max-width:700px){
+ .immersive .immersive-toolbar{column-gap:8px;padding-inline:8px}.immersive-brand strong{font-size:16px}.immersive-brand strong span{display:none}
+ .immersive .camera-toggle{font-size:0;min-width:48px;justify-content:center}.immersive .camera-toggle svg{width:20px;height:20px}
+ .immersive .pi-mode-bar .button{min-width:52px;padding-inline:10px}
+ .camera-immersive .immersive .compose-panel{padding-inline:8px;column-gap:8px;grid-template-columns:minmax(0,1fr) 128px 72px 96px}
+ .immersive .camera-diagnostics output{max-width:120px;overflow:hidden;text-overflow:ellipsis}
+}
+
+
+.immersive .sign-suggestions{grid-column:3;grid-row:1;position:static}
+.immersive .sign-suggestions summary{height:48px;padding:8px;font-size:12px;border-color:#708385;color:var(--fs-ink)}
+.immersive .sign-suggestion-content{position:absolute;bottom:calc(100% + 8px);left:16px;right:16px;padding:12px;background:var(--fs-surface);border:1px solid #708385;border-radius:12px;z-index:9;max-height:45dvh;overflow:auto;color:var(--fs-ink)}
+.immersive #signSearch{background:#122123;color:var(--fs-ink);border-color:#708385}.immersive #signSuggestionHint,.immersive .sign-suggestion-content label{color:var(--fs-muted)}
+.immersive .sign-choices .button{background:#243a3b;color:var(--fs-ink);border-color:#708385}
+.immersive #piAnswer a{color:#b8c8ff}.immersive #piAnswer pre{background:#122123}
+
+.speech-panel #useSpeechDraft{grid-column:1/-1;justify-self:start}
+.immersive .assistant-tools fieldset{border-color:var(--fs-border)}
+.immersive .assistant-tools input,.immersive .assistant-tools select,.immersive #signEditAction{background:#122123;color:var(--fs-ink);border-color:#708385}
+.immersive .assistant-actions .button,.immersive #useDeviceLocation,.immersive #removeLastSign{background:var(--fs-surface);color:var(--fs-ink);border-color:#708385}
+.immersive .assistant-tools .helper,.immersive .sign-suggestion-content p{color:var(--fs-muted)}
+
+/* Camera controls live outside the image, both in the workspace and fullscreen. */
+.app-header{height:48px}
+.camera-panel:not(.immersive){
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  grid-template-rows:auto minmax(0,1fr) auto auto;align-items:stretch;
+  background:#102027;color:#f2f8fa;
+}
+.camera-panel:not(.immersive) .recognition-result{
+  grid-area:1/1;min-width:0;min-height:48px;padding:6px 10px;background:#193039;
+}
+.camera-panel:not(.immersive) .recognition-result>div{min-width:0}
+.camera-panel:not(.immersive) .recognition-result .field-caption{display:none}
+.camera-panel:not(.immersive) .recognition-result p{color:#f2f8fa;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.camera-course-tools{grid-area:1/2;display:flex;align-items:center;gap:4px;padding:2px 5px;background:#193039}
+.camera-course-tools :is(.camera-toggle,.camera-expand,.camera-diagnostics){
+  position:static;min-height:44px;margin:0;
+}
+.camera-course-tools :is(.camera-toggle,.camera-expand,.camera-diagnostics-toggle){
+  min-width:44px;min-height:44px;padding:5px 8px;border-color:#58727d;background:#203d48;color:#f2f8fa;
+}
+.camera-course-tools .camera-diagnostics{display:grid;grid-template-columns:auto auto;align-items:center;gap:0 3px;max-width:none}
+.camera-course-tools .camera-diagnostics-toggle{grid-column:1;grid-row:1/3;white-space:nowrap}
+.camera-course-tools .camera-diagnostics output{
+  grid-column:2;max-width:110px;padding:0 3px;color:#d0e1e7;background:transparent;
+  font-size:10px;line-height:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.camera-course-tools:has(#recognitionScore:not([hidden])) .camera-diagnostics-toggle{color:#a9e9cf}
+.camera-panel:not(.immersive) .camera-view{grid-area:2/1/3/3;min-height:0}
+.camera-panel .camera-view img{object-fit:contain;object-position:center}
+.camera-panel .camera-source{display:none}
+.camera-panel:not(.immersive) .camera-empty{padding:12px}
+.camera-panel:not(.immersive) .camera-subtitle{grid-row:4}
+.camera-panel.immersive{grid-template-rows:52px minmax(0,1fr) auto auto 78px}
+.camera-panel.immersive .immersive-toolbar{height:52px;padding-block:2px}
+.camera-panel.immersive .camera-course-tools{display:none}
+.immersive .camera-subtitle{grid-row:4;font-size:19px}
+.pi-caption-row{grid-area:4/1/5/-1;display:flex;flex-wrap:wrap;gap:4px;align-items:center;min-width:0}
+.pi-caption-row .camera-subtitle{flex:1 1 160px;width:auto;min-width:0}
+.pi-sign-controls{display:flex;flex-wrap:wrap;gap:4px;min-width:0;padding:2px 4px}
+.pi-sign-controls :is(select,button){min-height:44px;padding:4px 7px;border:1px solid #708385;border-radius:8px;background:#193039;color:#f2f8fa;font:inherit;font-size:12px}
+.pi-sign-controls :disabled{opacity:.55}
+.camera-immersive .immersive .compose-panel{grid-row:5;height:78px;padding-block:6px;row-gap:3px}
+.learning-feedback{
+  grid-area:3/1/4/3;display:grid;grid-template-columns:minmax(0,1fr) auto auto 44px;
+  align-items:center;gap:6px;min-width:0;padding:4px 6px;background:#193039;color:#f2f8fa;
+  border-top:1px solid #365763;
+}
+.immersive .learning-feedback{grid-area:3/1;padding-inline:12px}
+.learning-feedback p{
+  min-width:0;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;
+}
+.learning-feedback :is(.button,.icon-button){min-width:44px;min-height:44px;padding:4px 8px;font-size:13px;white-space:nowrap}
+#learningCorrect{background:#17654a;border:1px solid #4fa985;color:#fff}
+#learningWrong{background:#245670;border:1px solid #6b9bb4;color:#fff}
+#learningDismiss{background:transparent;border-color:#58727d;color:#f2f8fa}
+.learning-feedback :is(.button,.icon-button):is(:hover,:focus-visible){outline:2px solid #b8e5f6;outline-offset:-3px}
+#learningCorrection{background:#193039;color:#f2f8fa;border:1px solid #58727d}
+#learningCorrection .helper{color:#d0e1e7}
+#learningCorrection select{margin-block:6px 12px}
+#learningCorrection .button{min-height:44px}
+
+@media (min-width:701px) and (min-height:440px){
+  .home-page{height:100%;min-height:0}
+  .home-page .communication-grid{
+    flex:1;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);
+    grid-template-areas:'camera compose' 'camera speech';
+    grid-template-rows:minmax(0,1fr) auto;min-height:0;align-items:stretch;
+  }
+  .home-page .camera-panel:not(.immersive){height:auto}
+  .home-page .compose-panel{max-height:100%;overflow:auto;overscroll-behavior:contain}
+  body:not(.camera-immersive) .home-page .compose-panel > .pi-answer{flex:none;overflow:visible}
+  body:not(.camera-immersive) .home-page .pi-answer-content{overflow:visible;max-height:none;min-height:0}
+  .home-page .weather-result dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-page .compose-panel textarea{min-height:50px;height:50px;font-size:18px}
+  .home-page .compose-bottom .button{min-height:44px}
+  .home-page .speech-panel{grid-template-columns:minmax(0,1fr) auto;padding:4px 0;gap:4px 6px}
+  .home-page #micTranscript{height:44px;min-height:44px;font-size:15px}
+  .home-page .speech-panel .button{min-height:44px}
+  .home-page .speech-label>div{display:block}
+  .home-page .speech-panel[data-empty="true"] :is(#micTranscript,#confirmSpeech,#useSpeechDraft,#speechHint){display:none}
+  .home-page .speech-panel[data-empty="true"]{grid-template-columns:minmax(0,1fr) auto;align-items:center}
+  .home-page .speech-panel[data-empty="true"] .speech-label{grid-column:1}
+  .home-page .speech-panel[data-empty="true"] #listenBtn{grid-column:2}
+}
+@media (max-width:850px){
+  .camera-course-tools .camera-toggle>span:last-child{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden}
+}
+@media (max-width:480px){
+  .camera-course-tools .camera-diagnostics-toggle{font-size:11px}
+  .learning-feedback{grid-template-columns:1fr auto auto 44px}
+  .learning-feedback p{grid-column:1/-1}
+  #learningCorrect{grid-column:2}
+}

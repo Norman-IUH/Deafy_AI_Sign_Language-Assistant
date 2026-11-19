@@ -1,0 +1,8 @@
+{
+  "appId": "vn.edu.signassist",
+  "appName": "Sign Assist",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": true
+  }
+}

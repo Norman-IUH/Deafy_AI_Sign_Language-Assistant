@@ -1,0 +1,3 @@
+-r requirements-demo.txt
+paho-mqtt==2.1.0
+zeroconf==0.148.0

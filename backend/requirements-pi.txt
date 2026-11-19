@@ -1,0 +1,8 @@
+# Raspberry Pi OS 64-bit, Python 3.12; versions verified on the connected Pi.
+--extra-index-url https://download.pytorch.org/whl/cpu
+-r requirements-speech.txt
+-r requirements-iot.txt
+numpy==1.26.4
+mediapipe==0.10.18
+opencv-contrib-python==4.11.0.86
+torch==2.15.0+cpu

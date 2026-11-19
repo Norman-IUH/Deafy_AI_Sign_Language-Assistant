@@ -1,0 +1,19 @@
+# Deafy AI managed unit; generated from the selected checkout.
+[Unit]
+Description=Deafy AI backend and Pi UI
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+WorkingDirectory=@PROJECT_DIR@
+ExecStart=/usr/bin/bash @START_SCRIPT@
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=20
+KillMode=control-group
+UMask=0077
+StandardOutput=append:@LOG_PATH@
+StandardError=inherit
+
+[Install]
+WantedBy=default.target

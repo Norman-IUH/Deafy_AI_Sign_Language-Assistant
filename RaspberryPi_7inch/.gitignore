@@ -1,0 +1,15 @@
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+data/*.sqlite3*
+.env
+android_legacy_20261028/
+www/
+android/.gradle/
+android/.gradle-cache/
+android/local.properties
+android/app/build/
+local.properties
+*.jks
+*.keystore
